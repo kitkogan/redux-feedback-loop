@@ -10,32 +10,29 @@ class Feeling extends Component {
         feelings: 0
     }
 
-    
-    // //when page loads, feedback stored in reducer will be cleared
-    // componentDidMount = () => {
-    //     console.log('mounted');
-    //     this.props.dispatch({type: 'CLEAR_FEEDBACK'})
-    // }
-
     //on 'Next' button click, rating sent to reducer
     //advance user to '/understanding' page
-    handleClickNext = () => {
-        console.log('in handleclicknext');
-        // const feels = this.state.feelings;
-        const action = {type: 'FEELING_UPDATE', payload: this.state.feelings};
+    //update feelings rating in redux-store
+    handleClickNext = (event) => {
+        event.preventDefault();
+        console.log('in handleclicknext', this.state.feelings);
+        const feel = this.state.feelings;
+        const action = {type: 'FEELING_UPDATE', payload: feel};
         this.props.dispatch(action);
         this.props.history.push('/understanding');
     }
 
     //user selected rating will be saved to local state
-    handleSelected = (ratingScore) => {
-        console.log('feelings', ratingScore)
+    handleSelected = (event) => {
+        let ratingScore = event.target.value;
+        console.log('feelings handleselected', ratingScore);
         this.setState({
             feelings: ratingScore
         })
     }
+
     render () {
-        console.log('feelings', this.state.feelings);
+        console.log('feelings render', this.state.feelings);
         return (
             <div>
                 <Header />
