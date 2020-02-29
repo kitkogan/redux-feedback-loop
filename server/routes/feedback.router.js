@@ -5,6 +5,7 @@ const router = express.Router();
 const feedback = require('../modules/pool');
 
 router.get('/', (req, res) => {
+    console.log('in router GET')
     pool.query(`SELECT * FROM feedback;`)
     .then(result => {res.send(result.rows)})
     .catch(err => {
