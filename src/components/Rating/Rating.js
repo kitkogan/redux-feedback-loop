@@ -23,7 +23,7 @@ class Rating extends Component {
     render() {
         return (
             <div className="custom-select" width="200px">
-                    <label className="dailyRating">Please select a number from 1-5 that corresponds with your feelings today</label>
+                    {/* <label className="dailyRating">Please select a number from 1-5 that corresponds with your feelings today</label> */}
                     <select id="dailyRatingSelect" value={this.state.rating} onChange={this.handleSelectedRating}>
                         <option value="0">Please select a number</option>
                         <option value="1">1</option>

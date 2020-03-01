@@ -16,29 +16,29 @@ class UserReview extends Component {
                 const action = { type: 'CLEAR_FEEDBACK' };
                 this.props.dispatch(action);
                 this.props.history.push('/Success');
-            }).catch((error) => {
-                console.log(error);
+            }).catch((err) => {
+                console.log(err);
             })
     }
 
       // display current ratings entered at bottom of input pages
       render() {
-        let toggleButton;
-        if (this.props.location.pathname === '/FinalUserReview'){
-            toggleButton = <button onClick={this.postFeedback}>Submit</button>
-        } else {
-            toggleButton = <button onClick={this.postFeedback}>Not Yet Completed</button>
-        };
+        let submitButton;
+        if (this.props.location.pathname === '/UserReview'){
+            submitButton = <button onClick={this.postFeedback}>Submit</button>
+         }; //else {
+        // //     toggleButton = <button onClick={this.postFeedback}>Not Yet Completed</button>
+        // };
         
         const feedback = this.props.reduxStore.feedbackReducer;
         return (
-            <div className="review">
+            <div className="userReview">
                 <h3>Review Your Feedback</h3>
                 <p>Feelings: {feedback.Feelings} </p>
                 <p>Understanding: {feedback.Understanding}</p>
                 <p>Support: {feedback.Support}</p>
                 <p>Comments: {feedback.Comments}</p>
-                {toggleButton}
+                {submitButton}
             </div>
         )
     }

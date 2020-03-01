@@ -5,6 +5,9 @@ import './App.css';
 import { connect } from 'react-redux';
 import Feeling from './../Feeling/Feeling';
 import Understanding from './../Understanding/Understanding';
+import Support from './../Support/Support';
+import Comments from './../Comments/Comments';
+import UserReview from './..UserReview/UserReview';
 
 class App extends Component {
   render() {
@@ -16,6 +19,9 @@ class App extends Component {
           <div>
             <Route exact path='/' component={Feeling} />
             <Route exact path='/Understanding' component={Understanding} />
+            <Route exact path='/Support' component={Support} />
+            <Route exact path='/Comments' component={Comments} />
+            <Route exact path='/UserReview'component={UserReview} />
 
           </div>
         </Router>

@@ -19,10 +19,10 @@ router.post('/', (req, res) => {
     const feedback = req.body;
     console.log(feedback.Feelings);
     pool.query(queryText, [feedback.Feelings, feedback.Understanding, feedback.Support, feedback.Comments] )
-        .then((response) => {
+        .then((res) => {
             res.sendStatus(201);
-        }).catch((error) => {
-            console.log('Error in POST', error);
+        }).catch((err) => {
+            console.log('Error in POST', err);
             res.sendStatus(500);
         })
 })
