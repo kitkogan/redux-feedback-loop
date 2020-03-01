@@ -26,9 +26,7 @@ class UserReview extends Component {
         let submitButton;
         if (this.props.location.pathname === '/UserReviewSubmit'){
             submitButton = <button onClick={this.postFeedback}>Submit</button>
-         } else {
-             submitButton = <button onClick={this.postFeedback}>Not Yet Completed</button>
-        };
+         };
         
         const feedback = this.props.reduxStore.feedbackReducer;
         return (
