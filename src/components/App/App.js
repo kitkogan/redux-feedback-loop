@@ -10,7 +10,6 @@ import Comments from './../Comments/Comments';
 import UserReviewSubmit from './../UserReviewSubmit/UserReviewSubmit';
 import Success from './../Success/Success';
 import Admin from './../Admin/Admin.js';
-
 //sets up page routes/paths for components
 class App extends Component {
   render() {

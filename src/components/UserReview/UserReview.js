@@ -17,7 +17,6 @@ class UserReview extends Component {
                 alert('An error has occured, please try again later');
             })
     }
-
       //conditional rendering allows submitButton to show when the /UserReviewSubmit route is hit
       //provides temp storage for feedback in reducer until it is posted to the database on successful submit
       render() {

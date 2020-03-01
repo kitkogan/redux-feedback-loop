@@ -6,12 +6,10 @@ import Rating from '../Rating/Rating';
 import '../App/App.css';
 
 class Understanding extends Component {
-
     //sets initial state
     state = {
         understanding: 0
     }
-
     //on 'Next' button click, rating sent to reducer
     //advance user to '/Support' page
     //updates understanding rating in redux-store
@@ -25,7 +23,7 @@ class Understanding extends Component {
             this.props.history.push('/Support');
         }
     }
-
+    //sends user to previous page when 'Back' buttons is clicked
     handleBackClick = () => {
         const feel = this.state.feeling;
         const action = {type: 'FEELING_UPDATE', payload: feel};
@@ -36,16 +34,14 @@ class Understanding extends Component {
             this.props.history.push('/');
         }
     }
-  
     //user selected rating will be updated in local state
     handleSelectedUnderstanding = (ratingScore) => {
         this.setState({
             understanding: ratingScore
         })
     }
-
     //rating dropdown will allow user to select their 'unsertanding' rating
-    //when user selects rating number and clicks the 'Next' button,
+    //when user selects rating number or user clicks the 'Next'/'Back' buttons,
     //the above functions will be triggered
     render () {
         console.log('understanding render', this.state.understanding);

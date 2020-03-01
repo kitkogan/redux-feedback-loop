@@ -5,12 +5,10 @@ import Header from '../Header/Header';
 import '../App/App.css';
 
 class Comments extends Component {
-
     //sets initial state
     state = {
         comments: ''
     }
-
     //on 'Next' button click, rating sent to reducer
     //advance user to '/Comments' page
     //update comments input in redux-store
@@ -20,11 +18,11 @@ class Comments extends Component {
         this.props.dispatch(action);
         this.props.history.push('/UserReviewSubmit');
     }
-
+    //sends user to previous page when 'Back' buttons is clicked
     handleBackClick = () => {
-        const under = this.state.support;
-        const action = {type: 'SUPPORT_UPDATE', payload: under};
-        if(under === 0) {
+        const sup = this.state.support;
+        const action = {type: 'SUPPORT_UPDATE', payload: sup};
+        if(sup === 0) {
             alert('this field cannot be left blank');
         } else {
             this.props.dispatch(action);
@@ -37,9 +35,9 @@ class Comments extends Component {
             comments: event.target.value
         })
     }
-
     //comments section has a message letting user know this is an optional portion
     //'Next' button click will trigger 'handleClickNext' func
+    //'Back button click triggers 'handleBackClick' func
     render () {
         return (
             <div>

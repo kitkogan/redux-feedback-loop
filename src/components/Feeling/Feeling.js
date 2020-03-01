@@ -6,12 +6,10 @@ import Rating from '../Rating/Rating';
 import '../App/App.css';
 
 class Feeling extends Component {
-
     //sets initial state
     state = {
         feelings: 0
     }
-
     //on 'Next' button click, rating sent to reducer
     //advance user to '/Understanding' page
     //update feelings rating in redux-store
@@ -26,14 +24,12 @@ class Feeling extends Component {
         }
         
     }
-
     //user selected rating will be updated in local state
     handleSelectedFeeling = (ratingScore) => {
         this.setState({
             feelings: ratingScore
         })
     }
-
     //section for Feelings rating
     //user triggers above functions by selecting a rating from dropdown
     //and clicking the 'Next' button

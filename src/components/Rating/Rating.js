@@ -5,8 +5,7 @@ import { connect } from 'react-redux';
 class Rating extends Component {
     //sets initial state
     state = {}
-
-//user selected rating will be updated in local state
+    //user selected rating will be updated in local state
     handleSelectedRating = (event) => {
         const rating = event.target.value;
         this.setState({
@@ -14,7 +13,6 @@ class Rating extends Component {
         });
         this.props.onChange(rating);
     }
-
     //Provides dropdown menu to 'Feeling', 'Support', and 'Understanding' components
     render() {
         return (

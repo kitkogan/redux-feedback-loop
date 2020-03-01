@@ -17,7 +17,6 @@ const defaultFeedbackState = {
     Support: 0,
     Comments: ''
 }
-
 //data from different pages sent to redux store
 //all data will clear on submit button click
 const feedbackReducer = (state = defaultFeedbackState, action) => {
@@ -34,7 +33,6 @@ const feedbackReducer = (state = defaultFeedbackState, action) => {
     }
     return state;
 }
-
 //Store holds all info for feedback app
 const storeInstance = createStore(
     combineReducers({
@@ -43,5 +41,4 @@ const storeInstance = createStore(
     applyMiddleware(logger),
 );
 ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, document.getElementById('root'));
-
 registerServiceWorker.unregister();

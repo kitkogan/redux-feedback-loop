@@ -6,12 +6,10 @@ import Rating from '../Rating/Rating';
 import '../App/App.css';
 
 class Support extends Component {
-
     //sets initial state
     state = {
         support: 0
     }
-
     //on 'Next' button click, rating sent to reducer
     //advance user to '/Comments' page
     //update support rating in redux-store
@@ -25,7 +23,7 @@ class Support extends Component {
             this.props.history.push('/Comments');
         }
     }
-
+    //when back button is clicked, this function will bring user to prev page
     handleBackClick = () => {
         const under = this.state.understand;
         const action = {type: 'UNDERSTAND_UPDATE', payload: under};
@@ -36,16 +34,14 @@ class Support extends Component {
             this.props.history.push('/Understanding');
         }
     }
-
     //user selected rating will be updated in local state
     handleSelectedSupport = (ratingScore) => {
         this.setState({
             support: ratingScore
         })
     }
-
     //user is shown a dropdown menu to select their 'Support' rating
-    //when a rating is selected and the 'Next' button is clicked,
+    //when a rating is selected and the 'Next' or 'Back' buttons are clicked,
     //the above functions will be triggered
     render () {
         return (

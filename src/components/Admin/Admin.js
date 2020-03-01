@@ -9,13 +9,10 @@ class Admin extends Component {
         //and display in the table
         this.getUserFeedback();
     }
-
     //sets initial state
     state = {
         feedback: []
     }
-
-
     //calls on axios to get data from db
     getUserFeedback = () => {
         axios.get('/api/feedback').then((response) => {
@@ -27,7 +24,6 @@ class Admin extends Component {
             console.log('Error in GET', err);
         })
     }
-
     //handles click for delete button
     //swal popup allows admin choice to confirm delete or cancel delete req on selected entry
     handleDeleteClick = (id) => {
@@ -49,12 +45,9 @@ class Admin extends Component {
           )
         }
       })
-    
-} 
+    } 
     //calls on axios to delete selected data set
     deleteUserFeedback = (id) => {
-        
-
         console.log('delete');
         axios.delete('api/feedback/' + id)
 
@@ -65,7 +58,7 @@ class Admin extends Component {
             console.log('error with DELETE route /feedback/:id', error);
         })
     }
-
+    //data rendered in a table from db
   render () {
     return (
         <div>
