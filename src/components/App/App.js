@@ -9,6 +9,7 @@ import Support from './../Support/Support';
 import Comments from './../Comments/Comments';
 import UserReviewSubmit from './../UserReviewSubmit/UserReviewSubmit';
 import Success from './../Success/Success';
+import Admin from './../Admin/Admin.js';
 
 //sets up page routes/paths for components
 class App extends Component {
@@ -23,6 +24,7 @@ class App extends Component {
             <Route exact path='/Comments' component={Comments} />
             <Route exact path='/UserReviewSubmit' component={UserReviewSubmit} />
             <Route exact path='/Success' component={Success} />
+            <Route exact path='/Admin' component={Admin} />
           </div>
         </Router>
       </div>
