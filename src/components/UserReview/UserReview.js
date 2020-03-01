@@ -5,23 +5,21 @@ import {withRouter} from 'react-router-dom';
 
 class UserReview extends Component {
     //User feedback sent to redux-store
-    //User advances to 'Success' page
-    postFeedback = (event) => {
+    //User advances to '/Success' if form submitted successfully
+    postFeedback = () => {
         const feedback = this.props.reduxStore.feedbackReducer;
-        console.log(feedback);
-        event.preventDefault();
         axios.post('/api/feedback', feedback)
             .then((response) => {
-                console.log(response);
                 const action = { type: 'CLEAR_FEEDBACK' };
                 this.props.dispatch(action);
                 this.props.history.push('/Success');
             }).catch((err) => {
-                console.log(err);
+                alert('An error has occured, please try again later');
             })
     }
 
-      // display current ratings entered at bottom of input pages
+      //conditional rendering allows submitButton to show when the /UserReviewSubmit route is hit
+      //provides temp storage for feedback in reducer until it is posted to the database on successful submit
       render() {
         let submitButton;
         if (this.props.location.pathname === '/UserReviewSubmit'){
@@ -31,7 +29,6 @@ class UserReview extends Component {
         const feedback = this.props.reduxStore.feedbackReducer;
         return (
             <div className="userReview">
-
                 <p>Feelings: {feedback.Feelings} </p>
                 <p>Understanding: {feedback.Understanding}</p>
                 <p>Support: {feedback.Support}</p>

@@ -1,3 +1,4 @@
+//imports
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Header from '../Header/Header';
@@ -12,11 +13,9 @@ class Understanding extends Component {
     }
 
     //on 'Next' button click, rating sent to reducer
-    //advance user to '/support' page
-    //update understanding rating in redux-store
-    handleClickNext = (event) => {
-        event.preventDefault();
-        console.log('in handleclicknext', this.state.understanding);
+    //advance user to '/Support' page
+    //updates understanding rating in redux-store
+    handleClickNext = () => {
         const under = this.state.understanding;
         const action = {type: 'UNDERSTAND_UPDATE', payload: under};
         if(under === 0) {
@@ -27,14 +26,16 @@ class Understanding extends Component {
         }
     }
 
-    //user selected rating will be saved to local state
+    //user selected rating will be updated in local state
     handleSelectedUnderstanding = (ratingScore) => {
-        console.log('understanding handleselected', ratingScore);
         this.setState({
             understanding: ratingScore
         })
     }
 
+    //rating dropdown will allow user to select their 'unsertanding' rating
+    //when user selects rating number and clicks the 'Next' button,
+    //the above functions will be triggered
     render () {
         console.log('understanding render', this.state.understanding);
         return (
@@ -43,7 +44,6 @@ class Understanding extends Component {
                 <h3>How well did you understand today's material?</h3>
                 <label className="dailyRating">Please select a number from 1-5 that corresponds with your understanding of today's material</label>
                 <Rating feedback="Understanding" onChange={this.handleSelectedUnderstanding} />
-            
                 <button className="handleNextButton" onClick={this.handleClickNext}>NEXT!</button>
             </div>
         )

@@ -5,7 +5,6 @@ const pool = require('../modules/pool');
 // router.get('/', (req, res) => {
 //     console.log('in router GET')
 //     const queryText = `SELECT * FROM "feedback";`;
-
 //     pool.query(queryText)
 //     .then(result => {res.send(result.rows)})
 //     .catch(err => {
