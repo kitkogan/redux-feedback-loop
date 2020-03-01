@@ -1,7 +1,5 @@
 const express = require('express');
 const router = express.Router();
-// Using a array of data on the server, we will eventually
-// move this back into the database.
 const feedback = require('../modules/pool');
 
 router.get('/', (req, res) => {
@@ -12,6 +10,21 @@ router.get('/', (req, res) => {
         console.log('GET req error', err);
         res.sendStatus(500);
     })
+})
+
+router.post('/', (req, res) => {
+    console.log('In POST');
+    const queryText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
+                        VALUES ($1, $2, $3, $4);`;
+    const feedback = req.body;
+    console.log(feedback.Feelings);
+    pool.query(queryText, [feedback.Feelings, feedback.Understanding, feedback.Support, feedback.Comments] )
+        .then((response) => {
+            res.sendStatus(201);
+        }).catch((error) => {
+            console.log('Error in POST', error);
+            res.sendStatus(500);
+        })
 })
 
 module.exports = router;

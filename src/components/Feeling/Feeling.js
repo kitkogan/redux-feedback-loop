@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Header from '../Header/Header';
+import Rating from '../Rating/Rating';
 import '../App/App.css';
+import UserReview from '../UserReview/UserReview';
 
 class Feeling extends Component {
 
@@ -19,12 +21,11 @@ class Feeling extends Component {
         const feel = this.state.feelings;
         const action = {type: 'FEELING_UPDATE', payload: feel};
         this.props.dispatch(action);
-        this.props.history.push('/understanding');
+        this.props.history.push('/Understanding');
     }
 
     //user selected rating will be saved to local state
-    handleSelected = (event) => {
-        let ratingScore = event.target.value;
+    handleSelectedFeeling = (ratingScore) => {
         console.log('feelings handleselected', ratingScore);
         this.setState({
             feelings: ratingScore
@@ -37,17 +38,9 @@ class Feeling extends Component {
             <div>
                 <Header />
                 <h3>How are you feeling today?</h3>
-                <div className="custom-select" width="200px">
-                <label className="dailyRating">Please select a number from 1-5 that corresponds with your feelings today</label>
-                <select id="dailyRating" onChange={this.handleSelected}>
-                    <option value="0">Please select a number</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-            </div>                
+                <Rating feedback="Feelings" onChange={this.handleSelectedFeeling} />
+                <UserReview />
+            
             <button className="handleNextButton" onClick={this.handleClickNext}>NEXT!</button>
             </div>
         )
