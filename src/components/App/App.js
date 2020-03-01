@@ -7,7 +7,7 @@ import Feeling from './../Feeling/Feeling';
 import Understanding from './../Understanding/Understanding';
 import Support from './../Support/Support';
 import Comments from './../Comments/Comments';
-import UserReview from './..UserReview/UserReview';
+// import UserReviewSubmit from './..UserReviewSubmit/UserReviewSubmit';
 
 class App extends Component {
   render() {
@@ -21,7 +21,7 @@ class App extends Component {
             <Route exact path='/Understanding' component={Understanding} />
             <Route exact path='/Support' component={Support} />
             <Route exact path='/Comments' component={Comments} />
-            <Route exact path='/UserReview'component={UserReview} />
+            {/* <Route exact path='/UserReviewSubmit'component={UserReviewSubmit} /> */}
 
           </div>
         </Router>

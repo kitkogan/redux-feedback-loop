@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import Header from '../Header/Header';
 import Rating from '../Rating/Rating';
 import '../App/App.css';
-// import UserReview from '../UserReview/UserReview';
+import UserReview from '../UserReview/UserReview';
 
 class Feeling extends Component {
 
@@ -40,7 +40,7 @@ class Feeling extends Component {
                 <h3>How are you feeling today?</h3>
                 <label className="dailyRating">Please select a number from 1-5 that corresponds with your feelings today</label>
                 <Rating feedback="Feelings" onChange={this.handleSelectedFeeling} />
-                {/* <UserReview /> */}
+                <UserReview />
             
             <button className="handleNextButton" onClick={this.handleClickNext}>NEXT!</button>
             </div>

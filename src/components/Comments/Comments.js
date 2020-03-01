@@ -4,7 +4,7 @@ import Header from '../Header/Header';
 
 import '../App/App.css';
 
-// import UserReview from '../UserReview/UserReview';
+import UserReview from '../UserReview/UserReview';
 
 class Comments extends Component {
 
@@ -26,7 +26,9 @@ class Comments extends Component {
     }
 
     //user selected rating will be saved to local state
-    handleSelectedComents = (string) => {
+    handleOnChangeComments = (event) => {
+        console.log(event.target.value)
+        let string = event.target.value
         console.log('understanding handleselected', string);
         this.setState({
             comments: string
@@ -40,8 +42,8 @@ class Comments extends Component {
                 <Header />
                 <h3>Questions, Comments, Concerns? We invite you to share if you feel called!</h3>
                 <label className="dailyRating">This section is optional</label>
-                <input feedback="Comments" onChange={this.handleSelectedComments} />
-                {/* <UserReview /> */}
+                <input feedback="Comments" onChange={this.handleOnChangeComments} />
+                <UserReview />
             
                 <button className="handleNextButton" onClick={this.handleClickNext}>NEXT!</button>
             </div>
