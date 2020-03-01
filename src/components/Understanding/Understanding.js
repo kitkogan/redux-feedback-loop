@@ -26,6 +26,17 @@ class Understanding extends Component {
         }
     }
 
+    handleBackClick = () => {
+        const feel = this.state.feeling;
+        const action = {type: 'FEELING_UPDATE', payload: feel};
+        if(feel === 0) {
+            alert('this field cannot be left blank');
+        } else {
+            this.props.dispatch(action);
+            this.props.history.push('/');
+        }
+    }
+  
     //user selected rating will be updated in local state
     handleSelectedUnderstanding = (ratingScore) => {
         this.setState({
@@ -44,6 +55,7 @@ class Understanding extends Component {
                 <h3>How well did you understand today's material?</h3>
                 <label className="dailyRating">Please select a number from 1-5 that corresponds with your understanding of today's material</label>
                 <Rating feedback="Understanding" onChange={this.handleSelectedUnderstanding} />
+                <button className="handleBackButton" onClick={this.handleBackClick}>BACK!</button>
                 <button className="handleNextButton" onClick={this.handleClickNext}>NEXT!</button>
             </div>
         )
