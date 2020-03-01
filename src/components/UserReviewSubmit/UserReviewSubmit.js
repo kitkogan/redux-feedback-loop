@@ -1,6 +1,7 @@
   
 import React, { Component } from 'react';
-import UserReview from './../UserReview/UserReview.js';
+// import {connect} from 'react-redux';
+import UserReview from '../UserReview/UserReview';
 
 //final review page for submit
 class UserReviewSubmit extends Component {

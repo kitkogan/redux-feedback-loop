@@ -7,8 +7,9 @@ import * as registerServiceWorker from './registerServiceWorker';
 import logger from 'redux-logger';
 
 //Redux
-import {createStore, combineReducers, applyMiddleware} from 'redux';
 import { Provider } from 'react-redux';
+import {createStore, combineReducers, applyMiddleware} from 'redux';
+
 
 const defaultFeedbackState = {
     Feelings: 0,

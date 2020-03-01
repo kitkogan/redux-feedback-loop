@@ -24,11 +24,11 @@ class UserReview extends Component {
       // display current ratings entered at bottom of input pages
       render() {
         let submitButton;
-        if (this.props.location.pathname === '/UserReview'){
+        if (this.props.location.pathname === '/UserReviewSubmit'){
             submitButton = <button onClick={this.postFeedback}>Submit</button>
-         }; //else {
-        // //     toggleButton = <button onClick={this.postFeedback}>Not Yet Completed</button>
-        // };
+         } else {
+             submitButton = <button onClick={this.postFeedback}>Not Yet Completed</button>
+        };
         
         const feedback = this.props.reduxStore.feedbackReducer;
         return (

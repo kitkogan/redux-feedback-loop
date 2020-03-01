@@ -7,8 +7,8 @@ import Feeling from './../Feeling/Feeling';
 import Understanding from './../Understanding/Understanding';
 import Support from './../Support/Support';
 import Comments from './../Comments/Comments';
-// import UserReviewSubmit from './..UserReviewSubmit/UserReviewSubmit';
-
+import UserReviewSubmit from './../UserReviewSubmit/UserReviewSubmit';
+import Success from './../Success/Success';
 class App extends Component {
   render() {
     return (
@@ -21,8 +21,8 @@ class App extends Component {
             <Route exact path='/Understanding' component={Understanding} />
             <Route exact path='/Support' component={Support} />
             <Route exact path='/Comments' component={Comments} />
-            {/* <Route exact path='/UserReviewSubmit'component={UserReviewSubmit} /> */}
-
+            <Route exact path='/UserReviewSubmit' component={UserReviewSubmit} />
+            <Route exact path='/Success' component={Success} />
           </div>
         </Router>
       </div>

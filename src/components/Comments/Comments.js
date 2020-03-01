@@ -22,16 +22,14 @@ class Comments extends Component {
         const comment = this.state.comments;
         const action = {type: 'COMMENTS_UPDATE', payload: comment};
         this.props.dispatch(action);
-        this.props.history.push('/UserReview');
+        this.props.history.push('/UserReviewSubmit');
     }
 
     //user selected rating will be saved to local state
     handleOnChangeComments = (event) => {
-        console.log(event.target.value)
-        let string = event.target.value
-        console.log('understanding handleselected', string);
+        console.log('comments handlechange', event.target.value);
         this.setState({
-            comments: string
+            comments: event.target.value
         })
     }
 
