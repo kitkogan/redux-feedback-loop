@@ -1,3 +1,4 @@
+//required
 const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool');
@@ -13,8 +14,8 @@ const pool = require('../modules/pool');
 //     })
 // })
 
+//post route allows completed data set to be added to the sql database
 router.post('/', (req, res) => {
-    console.log('In POST');
     const queryText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
                         VALUES ($1, $2, $3, $4);`;
     const feedback = req.body;
