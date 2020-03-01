@@ -4,6 +4,12 @@
 
  For this assignment, I created a feedback form modeled after Prime's system. Feedback will be collected over 4 views. A separate review page displays the current feedback values and a submit button. On submit, data is sent to a SQL database
 
+ ## Technology Used
+ - React
+ - Redux
+ - Axios
+ - SQL
+ 
 ### SETUP
 
 Create your database and tables using the provided `data.sql` file. Start the server.
