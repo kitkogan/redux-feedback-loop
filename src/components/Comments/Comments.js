@@ -21,6 +21,16 @@ class Comments extends Component {
         this.props.history.push('/UserReviewSubmit');
     }
 
+    handleBackClick = () => {
+        const under = this.state.support;
+        const action = {type: 'SUPPORT_UPDATE', payload: under};
+        if(under === 0) {
+            alert('this field cannot be left blank');
+        } else {
+            this.props.dispatch(action);
+            this.props.history.push('/Support');
+        }
+    }
     //user selected rating will be updated in local state
     handleOnChangeComments = (event) => {
         this.setState({
@@ -37,6 +47,7 @@ class Comments extends Component {
                 <h3>Questions, Comments, Concerns? We invite you to share if you feel called!</h3>
                 <label className="dailyRating">(This section is optional)</label>
                 <input feedback="Comments" onChange={this.handleOnChangeComments} />
+                <button className="handleBackButton" onClick={this.handleBackClick}>BACK!</button>
                 <button className="handleNextButton" onClick={this.handleClickNext}>NEXT!</button>
             </div>
         )

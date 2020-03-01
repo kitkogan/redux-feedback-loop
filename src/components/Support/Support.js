@@ -55,7 +55,6 @@ class Support extends Component {
                 <label className="dailyRating">Please select a number from 1-5 that corresponds with how supported you felt today</label>
                 <Rating feedback="Support" onChange={this.handleSelectedSupport} />
                 <button className="handleBackButton" onClick={this.handleBackClick}>BACK!</button>
-
                 <button className="handleNextButton" onClick={this.handleClickNext}>NEXT!</button>
 
             </div>
