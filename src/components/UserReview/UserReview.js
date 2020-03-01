@@ -31,7 +31,7 @@ class UserReview extends Component {
         const feedback = this.props.reduxStore.feedbackReducer;
         return (
             <div className="userReview">
-                <h3>Review Your Feedback</h3>
+
                 <p>Feelings: {feedback.Feelings} </p>
                 <p>Understanding: {feedback.Understanding}</p>
                 <p>Support: {feedback.Support}</p>

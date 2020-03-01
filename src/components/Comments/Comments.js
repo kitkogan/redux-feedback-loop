@@ -4,7 +4,6 @@ import Header from '../Header/Header';
 
 import '../App/App.css';
 
-import UserReview from '../UserReview/UserReview';
 
 class Comments extends Component {
 
@@ -39,9 +38,9 @@ class Comments extends Component {
             <div>
                 <Header />
                 <h3>Questions, Comments, Concerns? We invite you to share if you feel called!</h3>
-                <label className="dailyRating">This section is optional</label>
+                <label className="dailyRating">(This section is optional)</label>
                 <input feedback="Comments" onChange={this.handleOnChangeComments} />
-                <UserReview />
+                
             
                 <button className="handleNextButton" onClick={this.handleClickNext}>NEXT!</button>
             </div>
