@@ -6,7 +6,7 @@ const pool = require('../modules/pool');
 //get route gives requested data from db to admin component
 router.get('/', (req, res) => {
     console.log('in router GET')
-    const queryText = `SELECT * FROM "feedback";`;
+    const queryText = `SELECT * FROM "feedback" ORDER BY id desc;`;
     pool.query(queryText)
     .then(result => {res.send(result.rows)})
     .catch(err => {
